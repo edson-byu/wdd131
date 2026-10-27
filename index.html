@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Fundamentos da Web Dinâmica - Seu Nome Completo</title>
+    <meta name="description" content="WDD 131 – Fundamentos da Web Dinâmica, Seu Nome Completo, página inicial do curso de desenvolvimento web cobrindo HTML, CSS e JavaScript.">
+    <meta name="author" content="Seu Nome Completo">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="estilos/base.css">
+    
+    <!-- JavaScript com defer -->
+    <script src="scripts/obterdatas.js" defer></script>
+</head>
+<body>
+    <header>
+        <span id="titulo-curso">WDD131 – Fundamentos da Web Dinâmica</span>
+        <nav>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=por&id=p7#p7" target="_blank" rel="noopener">Escritura Favorita</a>
+            <a href="#" target="_blank" rel="noopener">Projeto Final</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Seu Nome Completo</h1>
+        
+        <div class="card-container">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <img src="imagens/perfil.jpg" alt="Foto de perfil de Seu Nome" width="200" height="200">
+                <p>Olá! Meu nome é Seu Nome Completo. Sou estudante de desenvolvimento web e estou entusiasmado por aprender HTML, CSS e JavaScript para construir aplicações modernas e responsivas.</p>
+            </section>
+
+            <section class="card">
+                <h2>Rio Grande do Sul, Brasil</h2>
+                <img src="imagens/estado.jpg" alt="Paisagem representativa do Rio Grande do Sul" width="300" height="200">
+                <p>Moro no Rio Grande do Sul, um estado com uma cultura rica, belas paisagens naturais e uma excelente hospitalidade tradicionalista.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="anoatual"></span> - Seu Nome Completo - Rio Grande do Sul, Brasil</p>
+        <p id="ultimaModificacao"></p>
+    </footer>
+</body>
+</html>
