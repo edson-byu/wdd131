@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --accent-color: #005b99;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Botão de Hambúrguer para Dispositivos Móveis */
+#menu-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Navegação Oculta em Mobile por padrão */
+.navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.navigation.open {
+    display: flex;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background-color: var(--accent-color);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Grade de Imagens - 1 Coluna em Dispositivos Móveis */
+.res-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    margin: 0;
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 0.8rem;
+    font-weight: bold;
+    background-color: #e9ecef;
+    color: var(--primary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
