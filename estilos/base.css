@@ -30,3 +30,10 @@ header, nav ul {
 .temple-grid {
     display: grid;
 }
+header, nav ul {
+    display: flex;
+}
+
+.temple-grid {
+    display: grid;
+}
