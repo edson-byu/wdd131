@@ -1,0 +1,40 @@
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    #menu {
+        display: none; /* Oculta o botão de hambúrguer em telas grandes */
+    }
+
+    nav {
+        position: static;
+        display: block;
+        width: auto;
+        background: none;
+        margin-top: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+
+    main {
+        max-width: 1200px;
+    }
+
+    /* Grid com múltiplas colunas uniformes em telas maiores */
+    .temple-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+}
