@@ -1,6 +1,12 @@
 
+/* ================================
+   LAYOUT PARA TELAS GRANDES
+   WDD 131
+================================ */
+
 @media (min-width: 768px) {
 
+    /* HEADER */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -8,6 +14,7 @@
         padding: 1.5rem;
     }
 
+    /* MENU */
     #menu {
         display: none;
     }
@@ -30,15 +37,18 @@
         border-radius: 4px;
     }
 
+    /* CONTEÚDO */
     main {
         max-width: 1200px;
     }
 
+    /* GRADE */
     .temple-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .temple-grid .card {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+

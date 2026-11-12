@@ -1,3 +1,9 @@
+
+/* ================================
+   ESTILOS GERAIS - WDD 131
+================================ */
+
+/* HEADER */
 header {
     background-color: #003366;
     color: #fff;
@@ -7,6 +13,7 @@ header {
     align-items: center;
 }
 
+/* NAVEGAÇÃO */
 nav ul {
     display: flex;
     list-style: none;
@@ -19,18 +26,21 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* CONTEÚDO PRINCIPAL */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
 }
 
+/* GRADE DE TEMPLOS */
 .temple-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
+/* RODAPÉ */
 footer {
     background-color: #003366;
     color: #fff;
