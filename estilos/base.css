@@ -1,38 +1,38 @@
-/* Organiza a grade com colunas de largura uniforme e o mesmo espaçamento */
+/* Define uma grade rigorosamente uniforme, ideal para o álbum */
 .temple-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas iguais como no modelo */
+    gap: 16px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
-/* Cada cartão de templo ganha um tamanho fixo e consistente */
+/* Padroniza cada cartão para ter o mesmo tamanho e bordas */
 .temple-grid figure {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Força todas as imagens a terem exatamente a mesma altura e largura, cortando o excesso sem deformar */
+/* Força todas as imagens a terem altura e largura idênticas */
 .temple-grid img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
+    height: 180px; /* Altura fixa igual para todas as fotos */
+    object-fit: cover; /* Mantém o preenchimento perfeito sem distorcer */
     display: block;
 }
 
-/* Estiliza o texto abaixo de cada imagem */
+/* Centraliza e padroniza o texto do rodapé da imagem */
 .temple-grid figcaption {
-    padding: 15px;
+    margin-top: 8px;
+    font-size: 0.9rem;
     text-align: center;
-    font-weight: bold;
-    color: #003366;
-    background: #fdfdfd;
+    color: #333;
 }
