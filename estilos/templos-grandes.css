@@ -1,4 +1,6 @@
+
 @media (min-width: 768px) {
+
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -7,7 +9,7 @@
     }
 
     #menu {
-        display: none; /* Oculta o botão de hambúrguer em telas grandes */
+        display: none;
     }
 
     nav {
@@ -20,11 +22,11 @@
 
     nav ul {
         flex-direction: row;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     nav a {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
         border-radius: 4px;
     }
 
@@ -32,9 +34,11 @@
         max-width: 1200px;
     }
 
-    /* Grid com múltiplas colunas uniformes em telas maiores */
     .temple-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
+        grid-template-columns: 1fr;
+    }
+
+    .temple-grid .card {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
