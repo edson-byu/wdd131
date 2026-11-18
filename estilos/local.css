@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #002776; /* Azul da bandeira */
+    --secondary-color: #009b3a; /* Verde da bandeira */
+    --accent-color: #ffdf00; /* Amarelo da bandeira */
+    --text-color: #333333;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.weather-icon-svg {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.weather-info {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 5px solid var(--accent-color);
+}
+
+footer p {
+    margin: 0.3rem 0;
+}

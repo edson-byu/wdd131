@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página sobre Porto Alegre, Rio Grande do Sul, destacando cultura, paisagens e informações meteorológicas para a disciplina WDD 131.">
+    <meta name="author" content="Édson Silva dos Passos">
+    <title>WDD 131 - Página do Local: Porto Alegre - Édson Silva dos Passos</title>
+    <link rel="stylesheet" href="estilos/local.css">
+    <link rel="stylesheet" href="estilos/local-grandes.css" media="(min-width: 768px)">
+    <script src="scripts/local.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Porto Alegre</h1>
+        <!-- Ícone SVG para visualização móvel -->
+        <svg class="weather-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#ffffff" aria-label="Ícone de Clima">
+            <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm0 18a8 8 0 118-8 8.009 8.009 0 01-8 8z"/>
+        </svg>
+        <nav>
+            <ul class="navigation">
+                <li><a href="local.html" class="active">Início</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#clima-secao">Clima</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Explorando a Capital dos Gaúchos</h2>
+
+        <!-- Imagem principal com picture, WebP e fallback para porto-alegre.jpg -->
+        <section class="hero-section">
+            <picture>
+                <source srcset="imagens/porto-alegre.webp" type="image/webp">
+                <img src="imagens/porto-alegre.jpg" alt="Paisagem de Porto Alegre e o Lago Guaíba" width="400" height="250">
+            </picture>
+        </section>
+
+        <div class="content-grid">
+            <section class="card" id="cultura">
+                <h3>Sobre a Cidade</h3>
+                <p>Porto Alegre é a capital do estado do Rio Grande do Sul, conhecida por seu famoso pôr do sol às margens do Lago Guaíba, rica tradição farroupilha, excelente qualidade de vida e hospitalidade única.</p>
+            </section>
+
+            <section class="card" id="clima-secao">
+                <h3 id="weather-title">Clima</h3>
+                <ul class="weather-info">
+                    <li><strong>Temperatura:</strong> <span id="temp">9</span> °C</li>
+                    <li><strong>Condição:</strong> Parcialmente Nublado</li>
+                    <li><strong>Vento:</strong> <span id="vento">14</span> km/h</li>
+                    <li><strong>Sensação Térmica:</strong> <span id="sensacao">N/A</span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Édson Silva dos Passos | Porto Alegre, RS</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

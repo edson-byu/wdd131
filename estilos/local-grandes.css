@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Esconde o SVG no desktop e ativa o pseudoelemento com emoticon */
+    .weather-icon-svg {
+        display: none;
+    }
+
+    #weather-title::after {
+        content: " ⛅";
+        font-size: 1.2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main {
+        padding: 0 2rem;
+    }
+}
