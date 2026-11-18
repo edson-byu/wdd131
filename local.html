@@ -7,23 +7,14 @@
     <meta name="description" content="Página sobre Porto Alegre, Rio Grande do Sul, destacando cultura, paisagens e informações meteorológicas para a disciplina WDD 131.">
     <meta name="author" content="Édson Silva dos Passos">
     
-    <!-- CSS Externo -->
     <link rel="stylesheet" href="estilos/local.css">
     <link rel="stylesheet" href="estilos/local-grandes.css" media="(min-width: 768px)">
     
-    <!-- JavaScript Externo -->
     <script src="scripts/local.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Porto Alegre</h1>
-        <nav>
-            <ul>
-                <li><a href="local.html">Início</a></li>
-                <li><a href="#cultura">Cultura</a></li>
-                <li><a href="#clima-secao">Clima</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -34,34 +25,49 @@
             </picture>
         </div>
 
-        <section class="dados">
-            <h2>Dados da Cidade</h2>
-            <p><strong>Estado:</strong> Rio Grande do Sul</p>
-            <p><strong>Fundação:</strong> 26 de março de 1772</p>
-            <p><strong>População:</strong> Aprox. 1,4 milhão de habitantes</p>
+        <section class="card dados">
+            <h2>Dados</h2>
+            <ul>
+                <li><strong>Área:</strong> 496,8 km²</li>
+                <li><strong>População:</strong> 1.332.570</li>
+                <li><strong>Estado:</strong> Rio Grande do Sul</li>
+                <li><strong>Idioma:</strong> Português</li>
+                <li><strong>Moeda:</strong> Real (BRL)</li>
+                <li><strong>Fuso Horário:</strong> UTC-3</li>
+                <li><strong>Código DDD:</strong> +55 (51)</li>
+            </ul>
         </section>
 
-        <section id="clima-secao" class="clima">
+        <section id="clima-secao" class="card clima">
             <h2>Clima</h2>
-            <div class="weather-card">
-                <!-- Ícone SVG visível apenas no mobile (oculto no desktop via CSS) -->
-                <svg class="weather-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/>
+            <!-- Ícone SVG visível apenas no mobile -->
+            <div class="svg-container">
+                <svg class="weather-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+                    <circle cx="32" cy="32" r="14" fill="#FFD700"/>
+                    <g stroke="#FFD700" stroke-width="4" stroke-linecap="round">
+                        <line x1="32" y1="6" x2="32" y2="12"/>
+                        <line x1="32" y1="52" x2="32" y2="58"/>
+                        <line x1="6" y1="32" x2="12" y2="32"/>
+                        <line x1="52" y1="32" x2="58" y2="32"/>
+                        <line x1="13.6" y1="13.6" x2="17.8" y2="17.8"/>
+                        <line x1="46.2" y1="46.2" x2="50.4" y2="50.4"/>
+                        <line x1="13.6" y1="50.4" x2="17.8" y2="46.2"/>
+                        <line x1="46.2" y1="17.8" x2="50.4" y2="13.6"/>
+                    </g>
                 </svg>
-                <p><strong>Temperatura Atual:</strong> <span id="temp">22</span>°C</p>
-                <p><strong>Condição:</strong> Parcialmente Nublado</p>
-                <p><strong>Sensação Térmica:</strong> <span id="sensacao">--</span>°C</p>
             </div>
-        </section>
-
-        <section id="cultura" class="cultura">
-            <h2>Cultura e Tradições</h2>
-            <p>Porto Alegre é rica em tradições gaúchas, destacando-se o consumo do chimarrão, o churrasco e os desfiles da Farroupilha. O pôr do sol no Lago Guaíba é um dos cartões-postais mais famosos da cidade.</p>
+            <ul>
+                <li><strong>Temperatura:</strong> <span id="temp">9</span> °C</li>
+                <li><strong>Condições:</strong> Ensolarado</li>
+                <li><strong>Vento:</strong> <span id="vento">12</span> km/h</li>
+                <li><strong>Sensação Térmica:</strong> <span id="sensacao"></span></li>
+            </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 | Édson Silva dos Passos | WDD 131</p>
+        <p>&copy;<span id="currentyear"></span> 🌴 Édson Silva dos Passos 🌴 Porto Alegre, Brasil</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>
