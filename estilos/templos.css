@@ -1,13 +1,155 @@
-footer {
-    background-color: var(--primary-color, #003366);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+/* ================================
+   ESTILOS BASE / MOBILE-FIRST
+   WDD 131 - Semana 02
+================================ */
+
+:root {
+    --primary-color: #003366;
+    --secondary-color: #002244;
+    --accent-color: #ffcc00;
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    --bg-light: #f4f6f9;
 }
 
-nav a:hover {
-    background-color: var(--accent-color, #ffcc00);
-    color: #000;
-    text-decoration: underline;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* HEADER */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+/* BOTÃO HAMBÚRGUER */
+#menu {
+    position: absolute;
+    top: 0.9rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "✕";
+}
+
+/* NAVEGAÇÃO MOBILE */
+nav {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+}
+
+nav.open {
+    display: block;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+    background-color: var(--accent-color);
+    color: #000000;
+    font-weight: 700;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+main h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* GRADE DE TEMPLOS (1 COLUNA NO MOBILE) */
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
 }
