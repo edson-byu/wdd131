@@ -1,117 +1,69 @@
-:root {
-    --primary-color: #002776; /* Azul da bandeira */
-    --secondary-color: #009b3a; /* Verde da bandeira */
-    --accent-color: #ffdf00; /* Amarelo da bandeira */
-    --text-color: #333333;
-    --bg-color: #f9f9f9;
-    --card-bg: #ffffff;
-    --font-family: 'Roboto', Arial, sans-serif;
-}
-
 body {
-    font-family: var(--font-family);
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background-color: var(--primary-color);
-    color: #ffffff;
+    background-color: #003366;
+    color: white;
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 5px solid var(--accent-color);
-}
-
-header h1 {
-    font-size: 1.4rem;
-    margin: 0;
-}
-
-.weather-icon-svg {
-    display: block;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0.5rem 0 0 0;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover, nav a.active {
-    color: var(--accent-color);
+nav a:hover {
+    text-decoration: underline;
 }
 
 main {
     max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: white;
 }
 
-h2 {
-    text-align: center;
-    color: var(--primary-color);
-}
-
-.hero-section {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.hero-section img {
+.hero img {
     width: 100%;
-    max-width: 600px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: block;
+    border-radius: 4px;
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 4px;
 }
 
-.card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--secondary-color);
-}
-
-.card h3 {
-    margin-top: 0;
-    color: var(--primary-color);
-}
-
-.weather-info {
-    list-style: none;
-    padding: 0;
-    line-height: 1.8;
+.weather-icon-svg {
+    display: inline-block;
+    fill: #003366;
+    margin-bottom: 0.5rem;
 }
 
 footer {
-    background-color: var(--primary-color);
-    color: #ffffff;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    border-top: 5px solid var(--accent-color);
-}
-
-footer p {
-    margin: 0.3rem 0;
+    padding: 1rem;
+    background-color: #003366;
+    color: white;
+    margin-top: 2rem;
 }
