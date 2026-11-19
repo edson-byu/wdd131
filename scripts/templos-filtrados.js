@@ -1,4 +1,5 @@
 const templos = [
+  // 1. Original
   {
     nomeDoTemplo: "Aba Nigeria",
     localizacao: "Aba, Nigéria",
@@ -7,6 +8,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
   },
+  // 2. Original
   {
     nomeDoTemplo: "Manti Utah",
     localizacao: "Manti, Utah, Estados Unidos",
@@ -15,6 +17,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
   },
+  // 3. Original
   {
     nomeDoTemplo: "Payson Utah",
     localizacao: "Payson, Utah, Estados Unidos",
@@ -23,6 +26,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
   },
+  // 4. Original
   {
     nomeDoTemplo: "Yigo Guam",
     localizacao: "Yigo, Guam",
@@ -31,6 +35,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
   },
+  // 5. Original
   {
     nomeDoTemplo: "Washington D.C.",
     localizacao: "Kensington, Maryland, Estados Unidos",
@@ -39,6 +44,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
   },
+  // 6. Original
   {
     nomeDoTemplo: "Lima Peru",
     localizacao: "Lima, Peru",
@@ -47,6 +53,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
   },
+  // 7. Original
   {
     nomeDoTemplo: "Cidade do México, México",
     localizacao: "Cidade do México, México",
@@ -55,6 +62,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
+  // 8. Adicionado pelo aluno (1 de 3)
   {
     nomeDoTemplo: "Porto Alegre Brasil",
     localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
@@ -63,6 +71,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/porto-alegre-brazil/400x250/porto-alegre-brazil-temple-lds-83426-wallpaper.jpg"
   },
+  // 9. Adicionado pelo aluno (2 de 3)
   {
     nomeDoTemplo: "Salt Lake",
     localizacao: "Salt Lake City, Utah, Estados Unidos",
@@ -71,6 +80,7 @@ const templos = [
     urlDaImagem:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-37762.jpg"
   },
+  // 10. Adicionado pelo aluno (3 de 3)
   {
     nomeDoTemplo: "Bern Switzerland",
     localizacao: "Münchenbuchsee, Berna, Suíça",
@@ -136,16 +146,4 @@ document.querySelector("#novos").addEventListener("click", () => {
 });
 
 document.querySelector("#grandes").addEventListener("click", () => {
-  const grandes = templos.filter((t) => t.area > 90000);
-  exibirTemplos(grandes, "Templos Grandes (> 90.000 sq ft)");
-});
-
-document.querySelector("#pequenos").addEventListener("click", () => {
-  const pequenos = templos.filter((t) => t.area < 10000);
-  exibirTemplos(pequenos, "Templos Pequenos (< 10.000 sq ft)");
-});
-
-document.querySelector("#ano-atual").textContent = new Date().getFullYear();
-document.querySelector("#ultima-modificacao").textContent = document.lastModified;
-
-exibirTemplos(templos, "Início — Todos os Templos");
+  const grandes = templos.filter((
