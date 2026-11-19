@@ -8,7 +8,6 @@
     --cor-link: #93c5fd;
     --cor-link-hover: #ffffff;
     --cor-borda-card: #d1d5db;
-    --cor-sombra: #111827;
 }
 
 * {
@@ -55,7 +54,8 @@ nav {
 }
 
 .nav-list,
-ul.nav-list {
+ul.nav-list,
+.nav-list.open {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
