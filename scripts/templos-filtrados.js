@@ -5,8 +5,8 @@ const templos = [
         consagracao: "2005, 7 de agosto",
         ano: 2005,
         area: 11500,
-        imagem: "imagens/aba-nigeria-temple.jpg",
-        alt: "Templo de Aba Nigéria iluminado ao entardecer"
+        imagem: "imagens/fortaleza-temple.jpg",
+        alt: "Templo em área ajardinada sob céu claro"
     },
     {
         nome: "Manti Utah",
@@ -14,8 +14,8 @@ const templos = [
         consagracao: "1888, 21 de maio",
         ano: 1888,
         area: 74792,
-        imagem: "imagens/manti-utah-temple.jpg",
-        alt: "Templo de Manti Utah cercado por árvores na primavera"
+        imagem: "imagens/recife_temple.jpg",
+        alt: "Templo histórico com jardins e árvores"
     },
     {
         nome: "Payson Utah",
@@ -23,8 +23,8 @@ const templos = [
         consagracao: "2015, 7 de junho",
         ano: 2015,
         area: 96630,
-        imagem: "imagens/payson-utah-temple.jpg",
-        alt: "Templo de Payson Utah sob céu claro"
+        imagem: "imagens/sao_paulo_temple.jpg",
+        alt: "Templo imponente com torre e jardins"
     },
     {
         nome: "Yigo Guam",
@@ -32,8 +32,8 @@ const templos = [
         consagracao: "2020, 2 de maio",
         ano: 2020,
         area: 6861,
-        imagem: "imagens/yigo-guam-temple.jpg",
-        alt: "Templo de Yigo Guam ao entardecer"
+        imagem: "imagens/curitiba_temple.jpg",
+        alt: "Templo em área arborizada"
     },
     {
         nome: "Washington D.C.",
@@ -41,8 +41,8 @@ const templos = [
         consagracao: "1974, 19 de novembro",
         ano: 1974,
         area: 156558,
-        imagem: "imagens/washington-dc-temple.jpg",
-        alt: "Templo de Washington D.C. em Kensington, Maryland"
+        imagem: "imagens/rio_de_janeiro_temple.jpg",
+        alt: "Templo amplo cercado por palmeiras"
     },
     {
         nome: "Lima Peru",
@@ -50,12 +50,48 @@ const templos = [
         consagracao: "1986, 10 de janeiro",
         ano: 1986,
         area: 9600,
-        imagem: "imagens/lima-peru-temple.jpg",
-        alt: "Templo de Lima Peru iluminado à noite"
+        imagem: "imagens/campinas_temple.jpg",
+        alt: "Templo iluminado em área ajardinada"
+    },
+    {
+        nome: "Cidade do México, México",
+        localizacao: "Cidade do México, México",
+        consagracao: "1983, 2 de dezembro",
+        ano: 1983,
+        area: 116642,
+        imagem: "imagens/brasilia_temple.jpg",
+        alt: "Templo com arquitetura simétrica e jardins"
+    },
+    {
+        nome: "Porto Alegre Brasil",
+        localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
+        consagracao: "2000, 17 de dezembro",
+        ano: 2000,
+        area: 10700,
+        imagem: "imagens/porto-alegre-temple.jpg",
+        alt: "Templo de Porto Alegre Brasil ao entardecer"
+    },
+    {
+        nome: "Belém Brasil",
+        localizacao: "Belém, Pará, Brasil",
+        consagracao: "2022, 20 de novembro",
+        ano: 2022,
+        area: 28675,
+        imagem: "imagens/belem_temple.jpg",
+        alt: "Templo de Belém Brasil em área externa"
+    },
+    {
+        nome: "Templo Pioneiro Antigo",
+        localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
+        consagracao: "1895, 12 de abril",
+        ano: 1895,
+        area: 8500,
+        imagem: "imagens/porto_alegre_temple.jpg",
+        alt: "Vista externa do templo em área ajardinada"
     }
 ];
 
-const containerCards = document.querySelector("#cards-container") || document.querySelector(".templos-grid") || document.querySelector("main");
+const containerCards = document.querySelector("#templos-container") || document.querySelector("#cards-container") || document.querySelector(".templos-grid") || document.querySelector("main");
 const tituloFiltro = document.querySelector("#filtro-titulo") || document.querySelector("h2");
 const linksFiltro = document.querySelectorAll("nav a");
 
@@ -136,6 +172,18 @@ function aplicarFiltro(hash) {
     }
 }
 
+function preencherRodape() {
+    const currentYear = document.querySelector("#currentyear");
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+    const lastModified = document.querySelector("#lastModified");
+    if (lastModified) {
+        lastModified.textContent = `Última modificação: ${document.lastModified}`;
+    }
+}
+
 linksFiltro.forEach((link) => {
     link.addEventListener("click", (event) => {
         const destino = link.getAttribute("href");
@@ -152,5 +200,6 @@ window.addEventListener("hashchange", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    preencherRodape();
     aplicarFiltro(window.location.hash || "#home");
 });
