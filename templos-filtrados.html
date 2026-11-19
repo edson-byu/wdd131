@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Álbum de Imagens de Templos Aprimorado | WDD 131</title>
-  <meta name="description" content="Álbum dinâmico de templos com filtragem por época de consagração e área em pés quadrados, layout em grade de 3 colunas e carregamento lento de imagens.">
+  <title>Álbum de Imagens de Templos | WDD 131</title>
+  <meta name="description" content="Álbum dinâmico de templos com filtragem por época de consagração e área em pés quadrados, layout responsivo e carregamento lento de imagens.">
   <meta name="author" content="Edson Silva dos Passos">
-  <link rel="stylesheet" href="styles/templos-filtrados.css">
+ <link rel="stylesheet" href="estilos/templos-filtrados.css">
   <script src="scripts/templos-filtrados.js" defer></script>
 </head>
 <body>
   <header>
+    <p class="marca-topo">Álbum do Templo</p>
     <h1>Álbum de Templos</h1>
     <nav aria-label="Filtros de templos">
-      <button type="button" id="inicio">Início</button>
-      <button type="button" id="antigos">Antigos</button>
-      <button type="button" id="novos">Novos</button>
-      <button type="button" id="grandes">Grandes</button>
-      <button type="button" id="pequenos">Pequenos</button>
+      <button type="button" id="inicio" class="ativo">Página Inicial</button>
+      <button type="button" id="antigos">Antigo</button>
+      <button type="button" id="novos">Novo</button>
+      <button type="button" id="grandes">Grande</button>
+      <button type="button" id="pequenos">Pequeno</button>
     </nav>
   </header>
 
   <main>
-    <h2 id="titulo-filtro">Início — Todos os Templos</h2>
+    <h2 id="titulo-filtro">Todos os Templos</h2>
     <div id="templos-container" class="templos-grid"></div>
   </main>
 
   <footer>
-    <p>&copy; <span id="ano-atual"></span> | Edson Silva dos Passos | Porto Alegre, RS</p>
+    <p>&copy;<span id="ano-atual"></span> &#127796; Édson Silva dos Passos &#127796; Porto Alegre, Brasil</p>
     <p>Última modificação: <span id="ultima-modificacao"></span></p>
   </footer>
 </body>
