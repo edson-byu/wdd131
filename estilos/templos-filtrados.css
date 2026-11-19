@@ -1,3 +1,4 @@
+/* Navegação e links de filtro com bom contraste */
 .nav-list {
     list-style: none;
     display: flex;
@@ -12,8 +13,8 @@
     display: inline-block;
     padding: 0.5rem 1rem;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
