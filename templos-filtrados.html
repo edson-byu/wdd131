@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Álbum de Templos Filtrados | Édson Silva dos Passos</title>
-    <meta name="description" content="Álbum interativo e responsivo de templos com filtragem dinâmica por ano e área, carregamento lento e boas práticas de desenvolvimento web.">
-    <meta name="author" content="Édson Silva dos Passos">
-
-    <link rel="stylesheet" href="estilos/templos-filtrados.css">
-    <script src="scripts/templos-filtrados.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbum de Imagens de Templos Aprimorado | WDD 131</title>
+  <meta name="description" content="Álbum dinâmico de templos com filtragem por época de consagração e área em pés quadrados, layout em grade de 3 colunas e carregamento lento de imagens.">
+  <meta name="author" content="Edson Silva dos Passos">
+  <link rel="stylesheet" href="styles/templos-filtrados.css">
+  <script src="scripts/templos-filtrados.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <p class="header-title">Álbum do Templo</p>
-            <button id="menu-toggle" type="button" aria-label="Abrir ou fechar menu de navegação" aria-expanded="false">&#9776;</button>
-        </div>
-        <nav aria-label="Filtros de templos">
-            <ul id="nav-menu" class="nav-list">
-                <li><a href="#home" id="home" class="filter-link active">Página Inicial</a></li>
-                <li><a href="#old" id="old" class="filter-link">Antigo</a></li>
-                <li><a href="#new" id="new" class="filter-link">Novo</a></li>
-                <li><a href="#large" id="large" class="filter-link">Grande</a></li>
-                <li><a href="#small" id="small" class="filter-link">Pequeno</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Álbum de Templos</h1>
+    <nav aria-label="Filtros de templos">
+      <button type="button" id="inicio">Início</button>
+      <button type="button" id="antigos">Antigos</button>
+      <button type="button" id="novos">Novos</button>
+      <button type="button" id="grandes">Grandes</button>
+      <button type="button" id="pequenos">Pequenos</button>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Álbum de Templos</h1>
-        <h2 id="filtro-titulo">Todos os Templos</h2>
-        <div id="templos-container" class="templos-grid" aria-live="polite"></div>
-    </main>
+  <main>
+    <h2 id="titulo-filtro">Início — Todos os Templos</h2>
+    <div id="templos-container" class="templos-grid"></div>
+  </main>
 
-    <footer>
-        <p>&copy;<span id="currentyear"></span> &#127796; Édson Silva dos Passos &#127796; Porto Alegre, Brasil</p>
-        <p id="lastModified"></p>
-    </footer>
+  <footer>
+    <p>&copy; <span id="ano-atual"></span> | Edson Silva dos Passos | Porto Alegre, RS</p>
+    <p>Última modificação: <span id="ultima-modificacao"></span></p>
+  </footer>
 </body>
 </html>
