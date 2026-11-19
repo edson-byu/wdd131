@@ -3,7 +3,7 @@ nav ul.nav-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
     padding: 0;
     margin: 0.85rem 0 0;
 }
@@ -11,9 +11,9 @@ nav ul.nav-list {
 nav a.filter-link,
 nav a.filter-link:visited {
     display: inline-block;
-    padding: 0.55rem 1.05rem;
-    font-size: 1rem;
-    line-height: 1.2;
+    padding: 0.6rem 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.25;
     font-weight: 600;
     color: #ffffff;
     background-color: #264875;
