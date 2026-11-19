@@ -1,61 +1,97 @@
 const templos = [
     {
-        nome: "Aba Nigéria",
-        localizacao: "Aba, Nigéria",
-        consagracao: "2005, 7 de agosto",
-        ano: 2005,
-        area: 11500,
-        imagem: "imagens/aba-nigeria-temple.jpg",
-        alt: "Templo de Aba Nigéria iluminado ao entardecer"
+        nome: "Porto Alegre Brasil",
+        localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
+        consagracao: "2000, 17 de dezembro",
+        ano: 2000,
+        area: 10700,
+        imagem: "imagens/porto-alegre-temple.jpg",
+        alt: "Templo de Porto Alegre Brasil em área ajardinada"
     },
     {
-        nome: "Manti Utah",
-        localizacao: "Manti, Utah, Estados Unidos",
-        consagracao: "1888, 21 de maio",
-        ano: 1888,
-        area: 74792,
-        imagem: "imagens/manti-utah-temple.jpg",
-        alt: "Templo de Manti Utah cercado por árvores na primavera"
+        nome: "São Paulo Brasil",
+        localizacao: "São Paulo, São Paulo, Brasil",
+        consagracao: "1978, 30 de outubro",
+        ano: 1978,
+        area: 59246,
+        imagem: "imagens/sao_paulo_temple.jpg",
+        alt: "Templo de São Paulo Brasil com fachada branca e jardins"
     },
     {
-        nome: "Payson Utah",
-        localizacao: "Payson, Utah, Estados Unidos",
-        consagracao: "2015, 7 de junho",
-        ano: 2015,
-        area: 96630,
-        imagem: "imagens/payson-utah-temple.jpg",
-        alt: "Templo de Payson Utah sob céu claro"
+        nome: "Fortaleza Brasil",
+        localizacao: "Fortaleza, Ceará, Brasil",
+        consagracao: "2019, 2 de junho",
+        ano: 2019,
+        area: 36000,
+        imagem: "imagens/fortaleza-temple.jpg",
+        alt: "Templo de Fortaleza Brasil sob céu claro"
     },
     {
-        nome: "Yigo Guam",
-        localizacao: "Yigo, Guam",
-        consagracao: "2020, 2 de maio",
-        ano: 2020,
-        area: 6861,
-        imagem: "imagens/yigo-guam-temple.jpg",
-        alt: "Templo de Yigo Guam ao entardecer"
+        nome: "Campinas Brasil",
+        localizacao: "Campinas, São Paulo, Brasil",
+        consagracao: "2002, 17 de maio",
+        ano: 2002,
+        area: 48100,
+        imagem: "imagens/campinas_temple.jpg",
+        alt: "Templo de Campinas Brasil cercado por jardins"
     },
     {
-        nome: "Washington D.C.",
-        localizacao: "Kensington, Maryland, Estados Unidos",
-        consagracao: "1974, 19 de novembro",
-        ano: 1974,
-        area: 156558,
-        imagem: "imagens/washington-dc-temple.jpg",
-        alt: "Templo de Washington D.C. em Kensington, Maryland"
+        nome: "Curitiba Brasil",
+        localizacao: "Curitiba, Paraná, Brasil",
+        consagracao: "2008, 1 de junho",
+        ano: 2008,
+        area: 27850,
+        imagem: "imagens/curitiba_temple.jpg",
+        alt: "Templo de Curitiba Brasil em área arborizada"
     },
     {
-        nome: "Lima Peru",
-        localizacao: "Lima, Peru",
-        consagracao: "1986, 10 de janeiro",
-        ano: 1986,
-        area: 9600,
-        imagem: "imagens/lima-peru-temple.jpg",
-        alt: "Templo de Lima Peru iluminado à noite"
+        nome: "Recife Brasil",
+        localizacao: "Recife, Pernambuco, Brasil",
+        consagracao: "2000, 15 de dezembro",
+        ano: 1895,
+        area: 37200,
+        imagem: "imagens/recife_temple.jpg",
+        alt: "Templo de Recife Brasil iluminado"
+    },
+    {
+        nome: "Belém Brasil",
+        localizacao: "Belém, Pará, Brasil",
+        consagracao: "2022, 20 de novembro",
+        ano: 2022,
+        area: 28675,
+        imagem: "imagens/belem_temple.jpg",
+        alt: "Templo de Belém Brasil em área externa"
+    },
+    {
+        nome: "Brasília Brasil",
+        localizacao: "Brasília, Distrito Federal, Brasil",
+        consagracao: "2023, 17 de setembro",
+        ano: 2023,
+        area: 25000,
+        imagem: "imagens/brasilia_temple.jpg",
+        alt: "Templo de Brasília Brasil com arquitetura moderna"
+    },
+    {
+        nome: "Rio de Janeiro Brasil",
+        localizacao: "Rio de Janeiro, Rio de Janeiro, Brasil",
+        consagracao: "2022, 8 de maio",
+        ano: 2022,
+        area: 29966,
+        imagem: "imagens/rio_de_janeiro_temple.jpg",
+        alt: "Templo de Rio de Janeiro Brasil com jardins tropicais"
+    },
+    {
+        nome: "Porto Alegre Pequeno",
+        localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
+        consagracao: "1885, 10 de março",
+        ano: 1885,
+        area: 8500,
+        imagem: "imagens/porto-pequena.webp",
+        alt: "Vista ilustrativa em formato compacto do Templo de Porto Alegre"
     }
 ];
 
-const containerCards = document.querySelector("#cards-container") || document.querySelector(".templos-grid") || document.querySelector("main");
+const containerCards = document.querySelector("#templos-container") || document.querySelector(".templos-grid") || document.querySelector("main");
 const tituloFiltro = document.querySelector("#filtro-titulo") || document.querySelector("h2");
 const linksFiltro = document.querySelectorAll("nav a");
 
@@ -103,8 +139,22 @@ function exibirTemplos(lista, tituloTexto) {
     containerCards.appendChild(fragmento);
 }
 
+function atualizarLinksAtivos(hash) {
+    linksFiltro.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href === hash) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+}
+
 function aplicarFiltro(hash) {
-    switch (hash) {
+    const filtroAtual = hash || "#home";
+    atualizarLinksAtivos(filtroAtual);
+
+    switch (filtroAtual) {
         case "#old":
             exibirTemplos(
                 templos.filter((t) => t.ano < 1900),
@@ -136,6 +186,18 @@ function aplicarFiltro(hash) {
     }
 }
 
+function preencherRodape() {
+    const anoSpan = document.querySelector("#currentyear");
+    if (anoSpan) {
+        anoSpan.textContent = String(new Date().getFullYear());
+    }
+
+    const ultimaModificacao = document.querySelector("#lastModified");
+    if (ultimaModificacao) {
+        ultimaModificacao.textContent = `Última modificação: ${document.lastModified}`;
+    }
+}
+
 linksFiltro.forEach((link) => {
     link.addEventListener("click", (event) => {
         const destino = link.getAttribute("href");
@@ -152,5 +214,6 @@ window.addEventListener("hashchange", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    preencherRodape();
     aplicarFiltro(window.location.hash || "#home");
 });
