@@ -1,35 +1,33 @@
-/* Navegação e links de filtro com bom contraste */
-.nav-list {
+nav ul.nav-list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     padding: 0;
-    margin: 0.75rem 0 0;
+    margin: 0.85rem 0 0;
 }
 
-.filter-link {
+nav a.filter-link,
+nav a.filter-link:visited {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1.05rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 600;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background-color: #264875;
+    border: 1px solid #8aa6cc;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.filter-link:hover,
-.filter-link:focus-visible {
+nav a.filter-link:hover,
+nav a.filter-link:focus-visible,
+nav a.filter-link.active {
     background-color: #d4881e;
     border-color: #d4881e;
     color: #111827;
-}
-
-.filter-link.active {
-    background-color: #d4881e;
-    border-color: #d4881e;
-    color: #111827;
+    text-decoration: none;
 }
