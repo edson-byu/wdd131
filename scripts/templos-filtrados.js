@@ -1,180 +1,156 @@
-// Rodapé dinâmico (Ano atual e data da última modificação)
-const currentYearElement = document.querySelector("#currentyear");
-if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
-}
-
-const lastModifiedElement = document.querySelector("#lastModified");
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = `Última modificação: ${document.lastModified}`;
-}
-
-// Array de templos: 7 originais + 3 adicionados (total de 10)
 const templos = [
     {
-        nomeDoTemplo: "Aba Nigeria",
+        nome: "Aba Nigéria",
         localizacao: "Aba, Nigéria",
         consagracao: "2005, 7 de agosto",
+        ano: 2005,
         area: 11500,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+        imagem: "imagens/aba-nigeria-temple.jpg",
+        alt: "Templo de Aba Nigéria iluminado ao entardecer"
     },
     {
-        nomeDoTemplo: "Manti Utah",
+        nome: "Manti Utah",
         localizacao: "Manti, Utah, Estados Unidos",
         consagracao: "1888, 21 de maio",
+        ano: 1888,
         area: 74792,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+        imagem: "imagens/manti-utah-temple.jpg",
+        alt: "Templo de Manti Utah cercado por árvores na primavera"
     },
     {
-        nomeDoTemplo: "Payson Utah",
+        nome: "Payson Utah",
         localizacao: "Payson, Utah, Estados Unidos",
         consagracao: "2015, 7 de junho",
+        ano: 2015,
         area: 96630,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+        imagem: "imagens/payson-utah-temple.jpg",
+        alt: "Templo de Payson Utah sob céu claro"
     },
     {
-        nomeDoTemplo: "Yigo Guam",
+        nome: "Yigo Guam",
         localizacao: "Yigo, Guam",
         consagracao: "2020, 2 de maio",
+        ano: 2020,
         area: 6861,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+        imagem: "imagens/yigo-guam-temple.jpg",
+        alt: "Templo de Yigo Guam ao entardecer"
     },
     {
-        nomeDoTemplo: "Washington D.C.",
+        nome: "Washington D.C.",
         localizacao: "Kensington, Maryland, Estados Unidos",
         consagracao: "1974, 19 de novembro",
+        ano: 1974,
         area: 156558,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+        imagem: "imagens/washington-dc-temple.jpg",
+        alt: "Templo de Washington D.C. em Kensington, Maryland"
     },
     {
-        nomeDoTemplo: "Lima Peru",
+        nome: "Lima Peru",
         localizacao: "Lima, Peru",
         consagracao: "1986, 10 de janeiro",
+        ano: 1986,
         area: 9600,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
-    },
-    {
-        nomeDoTemplo: "Cidade do México, México",
-        localizacao: "Cidade do México, México",
-        consagracao: "1983, 2 de dezembro",
-        area: 116642,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
-    },
-    // 3 templos adicionados
-    {
-        nomeDoTemplo: "Porto Alegre Brasil",
-        localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
-        consagracao: "2000, 17 de dezembro",
-        area: 10700,
-        urlDaImagem: "imagens/porto-alegre-temple.jpg"
-    },
-    {
-        nomeDoTemplo: "Salt Lake",
-        localizacao: "Salt Lake City, Utah, Estados Unidos",
-        consagracao: "1893, 6 de abril",
-        area: 253015,
-        urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-37762.jpg"
-    },
-    {
-        nomeDoTemplo: "Fortaleza Brasil",
-        localizacao: "Fortaleza, Ceará, Brasil",
-        consagracao: "2019, 2 de junho",
-        area: 22600,
-        urlDaImagem: "imagens/fortaleza-temple.jpg"
+        imagem: "imagens/lima-peru-temple.jpg",
+        alt: "Templo de Lima Peru iluminado à noite"
     }
 ];
 
-const containerTemplos = document.querySelector("#templos-container");
-const tituloSecao = document.querySelector("#filtro-titulo");
-const linksFiltro = document.querySelectorAll(".filter-link");
-const botaoMenu = document.querySelector("#menu-toggle");
-const listaNavegacao = document.querySelector("#nav-menu");
+const containerCards = document.querySelector("#cards-container") || document.querySelector(".templos-grid") || document.querySelector("main");
+const tituloFiltro = document.querySelector("#filtro-titulo") || document.querySelector("h2");
+const linksFiltro = document.querySelectorAll("nav a");
 
-// Extrai o ano numérico da string de consagração ("AAAA, ...")
-function extrairAno(dataConsagracao) {
-    return Number.parseInt(dataConsagracao.split(",")[0], 10);
+function criarCardTemplo(templo) {
+    const article = document.createElement("article");
+    article.classList.add("templo-card");
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = templo.nome;
+
+    const local = document.createElement("p");
+    local.innerHTML = `<strong>Localização:</strong> ${templo.localizacao}`;
+
+    const consagracao = document.createElement("p");
+    consagracao.innerHTML = `<strong>Consagração:</strong> ${templo.consagracao}`;
+
+    const area = document.createElement("p");
+    area.innerHTML = `<strong>Área:</strong> ${templo.area.toLocaleString("pt-BR")} pés quadrados`;
+
+    const img = document.createElement("img");
+    img.src = templo.imagem;
+    img.alt = templo.alt;
+    img.loading = "lazy";
+
+    article.append(titulo, local, consagracao, area, img);
+    return article;
 }
 
-// Cria e exibe os cartões de templos no DOM
-function renderizarTemplos(lista) {
-    if (!containerTemplos) return;
-    containerTemplos.innerHTML = "";
+function exibirTemplos(lista, tituloTexto) {
+    if (tituloFiltro) {
+        tituloFiltro.textContent = tituloTexto;
+    }
+
+    if (!containerCards) {
+        return;
+    }
+
+    containerCards.innerHTML = "";
+    const fragmento = document.createDocumentFragment();
 
     lista.forEach((templo) => {
-        const cartao = document.createElement("article");
-        cartao.classList.add("temple-card");
-
-        cartao.innerHTML = `
-            <div>
-                <h3>${templo.nomeDoTemplo}</h3>
-                <p><strong>Localização:</strong> ${templo.localizacao}</p>
-                <p><strong>Consagração:</strong> ${templo.consagracao}</p>
-                <p><strong>Área:</strong> ${templo.area.toLocaleString("pt-BR")} pés quadrados</p>
-            </div>
-            <img
-                src="${templo.urlDaImagem}"
-                alt="Templo de ${templo.nomeDoTemplo}"
-                loading="lazy"
-                width="400"
-                height="250"
-            >
-        `;
-
-        containerTemplos.appendChild(cartao);
+        fragmento.appendChild(criarCardTemplo(templo));
     });
+
+    containerCards.appendChild(fragmento);
 }
 
-// Filtra os templos de acordo com o link clicado
-function filtrarTemplos(tipoFiltro) {
-    let resultado = templos;
-    let titulo = "Todos os Templos";
-
-    if (tipoFiltro === "old") {
-        resultado = templos.filter((t) => extrairAno(t.consagracao) < 1900);
-        titulo = "Templos Antigos (Antes de 1900)";
-    } else if (tipoFiltro === "new") {
-        resultado = templos.filter((t) => extrairAno(t.consagracao) > 2000);
-        titulo = "Templos Novos (Depois de 2000)";
-    } else if (tipoFiltro === "large") {
-        resultado = templos.filter((t) => t.area > 90000);
-        titulo = "Templos Grandes (> 90.000 pés²)";
-    } else if (tipoFiltro === "small") {
-        resultado = templos.filter((t) => t.area < 10000);
-        titulo = "Templos Pequenos (< 10.000 pés²)";
+function aplicarFiltro(hash) {
+    switch (hash) {
+        case "#old":
+            exibirTemplos(
+                templos.filter((t) => t.ano < 1900),
+                "Templos Antigos (antes de 1900)"
+            );
+            break;
+        case "#new":
+            exibirTemplos(
+                templos.filter((t) => t.ano > 2000),
+                "Templos Novos (após 2000)"
+            );
+            break;
+        case "#large":
+            exibirTemplos(
+                templos.filter((t) => t.area > 90000),
+                "Templos Grandes (> 90.000 pés²)"
+            );
+            break;
+        case "#small":
+            exibirTemplos(
+                templos.filter((t) => t.area < 10000),
+                "Templos Pequenos (< 10.000 pés²)"
+            );
+            break;
+        case "#home":
+        default:
+            exibirTemplos(templos, "Todos os Templos");
+            break;
     }
-
-    if (tituloSecao) {
-        tituloSecao.textContent = titulo;
-    }
-
-    renderizarTemplos(resultado);
-
-    linksFiltro.forEach((link) => {
-        link.classList.toggle("active", link.id === tipoFiltro);
-    });
 }
 
-// Eventos de clique nos links de filtro
 linksFiltro.forEach((link) => {
     link.addEventListener("click", (event) => {
-        event.preventDefault();
-        filtrarTemplos(link.id);
-        if (listaNavegacao && listaNavegacao.classList.contains("open")) {
-            listaNavegacao.classList.remove("open");
-            if (botaoMenu) {
-                botaoMenu.setAttribute("aria-expanded", "false");
-            }
+        const destino = link.getAttribute("href");
+        if (destino && destino.startsWith("#")) {
+            event.preventDefault();
+            window.location.hash = destino;
+            aplicarFiltro(destino);
         }
     });
 });
 
-// Evento do botão hambúrguer no mobile
-if (botaoMenu && listaNavegacao) {
-    botaoMenu.addEventListener("click", () => {
-        const aberto = listaNavegacao.classList.toggle("open");
-        botaoMenu.setAttribute("aria-expanded", String(aberto));
-    });
-}
+window.addEventListener("hashchange", () => {
+    aplicarFiltro(window.location.hash || "#home");
+});
 
-// Renderização inicial
-filtrarTemplos("home");
+document.addEventListener("DOMContentLoaded", () => {
+    aplicarFiltro(window.location.hash || "#home");
+});
