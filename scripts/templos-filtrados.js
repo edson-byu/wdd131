@@ -13,7 +13,7 @@ const templos = [
         localizacao: "São Paulo, São Paulo, Brasil",
         consagracao: "1978, 30 de outubro",
         ano: 1978,
-        area: 59246,
+        area: 92000,
         imagem: "imagens/sao_paulo_temple.jpg",
         alt: "Templo de São Paulo Brasil com fachada branca e jardins"
     },
@@ -47,7 +47,7 @@ const templos = [
     {
         nome: "Recife Brasil",
         localizacao: "Recife, Pernambuco, Brasil",
-        consagracao: "2000, 15 de dezembro",
+        consagracao: "1895, 15 de dezembro",
         ano: 1895,
         area: 37200,
         imagem: "imagens/recife_temple.jpg",
@@ -87,7 +87,7 @@ const templos = [
         ano: 1885,
         area: 8500,
         imagem: "imagens/porto-pequena.webp",
-        alt: "Vista ilustrativa em formato compacto do Templo de Porto Alegre"
+        alt: "Vista compacta do Templo de Porto Alegre"
     }
 ];
 
