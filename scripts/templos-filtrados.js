@@ -1,6 +1,6 @@
 const templos = [
   {
-    nomeDoTemplo: "Aba Nigeria",
+    nomeDoTemplo: "Aba Nigéria",
     localizacao: "Aba, Nigéria",
     consagracao: "2005, 7 de agosto",
     area: 11500,
@@ -56,14 +56,6 @@ const templos = [
     alt: "Templo da Cidade do México"
   },
   {
-    nomeDoTemplo: "Porto Alegre Brasil",
-    localizacao: "Porto Alegre, Rio Grande do Sul, Brasil",
-    consagracao: "2000, 17 de dezembro",
-    area: 10700,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/porto-alegre-brazil/400x250/porto-alegre-brazil-temple-lds-83426-wallpaper.jpg",
-    alt: "Templo de Porto Alegre Brasil"
-  },
-  {
     nomeDoTemplo: "Salt Lake",
     localizacao: "Salt Lake City, Utah, Estados Unidos",
     consagracao: "1893, 6 de abril",
@@ -78,25 +70,44 @@ const templos = [
     area: 35546,
     urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bern-switzerland/400x250/bern-switzerland-temple-lds-784288-wallpaper.jpg",
     alt: "Templo de Bern Switzerland"
+  },
+  {
+    nomeDoTemplo: "Bountiful Utah",
+    localizacao: "Bountiful, Utah, Estados Unidos",
+    consagracao: "1995, 8 de janeiro",
+    area: 104000,
+    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-766918-wallpaper.jpg",
+    alt: "Templo de Bountiful Utah"
   }
 ];
 
-function anoConsagracao(texto) {
-  return parseInt(String(texto).split(",")[0].trim(), 10);
+const container = document.querySelector("#templos-container");
+const tituloFiltro = document.querySelector("#titulo-filtro");
+const linksFiltro = document.querySelectorAll("nav a");
+
+function obterAnoConsagracao(consagracaoStr) {
+  const anoTexto = String(consagracaoStr).split(",")[0].trim();
+  return Number.parseInt(anoTexto, 10);
 }
 
-function mostrarTemplos(lista, titulo = "Todos os Templos") {
-  const grid = document.querySelector("#templos-container") || document.querySelector("main > div");
-  const h2 = document.querySelector("#titulo-filtro") || document.querySelector("main h2");
+function marcarLinkAtivo(linkSelecionado) {
+  linksFiltro.forEach((link) => link.classList.remove("ativo"));
+  if (linkSelecionado) {
+    linkSelecionado.classList.add("ativo");
+  }
+}
 
-  if (h2) h2.textContent = titulo;
-  if (!grid) return;
+function exibirTemplos(listaTemplos, titulo = "Todos os Templos") {
+  if (!container || !tituloFiltro) {
+    return;
+  }
 
-  grid.innerHTML = "";
+  container.innerHTML = "";
+  tituloFiltro.textContent = titulo;
 
-  lista.forEach((templo) => {
-    const card = document.createElement("article");
-    card.className = "cartao-templo";
+  listaTemplos.forEach((templo) => {
+    const cartao = document.createElement("article");
+    cartao.classList.add("cartao-templo");
 
     const nome = document.createElement("h3");
     nome.textContent = templo.nomeDoTemplo;
@@ -104,62 +115,91 @@ function mostrarTemplos(lista, titulo = "Todos os Templos") {
     const local = document.createElement("p");
     local.innerHTML = `<strong>Localização:</strong> ${templo.localizacao}`;
 
-    const data = document.createElement("p");
-    data.innerHTML = `<strong>Consagração:</strong> ${templo.consagracao}`;
+    const consagracao = document.createElement("p");
+    consagracao.innerHTML = `<strong>Consagração:</strong> ${templo.consagracao}`;
 
     const area = document.createElement("p");
-    area.innerHTML = `<strong>Área:</strong> ${Number(templo.area).toLocaleString("en-US")} sq ft`;
+    area.innerHTML = `<strong>Área:</strong> ${Number(templo.area).toLocaleString("pt-BR")} pés quadrados`;
 
-    const img = document.createElement("img");
-    img.src = templo.urlDaImagem;
-    img.alt = templo.alt || `Templo de ${templo.nomeDoTemplo}`;
-    img.loading = "lazy";
-    img.width = 400;
-    img.height = 250;
+    const imagem = document.createElement("img");
+    imagem.src = templo.urlDaImagem;
+    imagem.alt = templo.alt || `Templo de ${templo.nomeDoTemplo}`;
+    imagem.loading = "lazy";
+    imagem.width = 400;
+    imagem.height = 250;
 
-    card.append(nome, local, data, area, img);
-    grid.appendChild(card);
+    cartao.append(nome, local, consagracao, area, imagem);
+    container.appendChild(cartao);
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarTemplos(templos, "Todos os Templos");
+  exibirTemplos(templos, "Todos os Templos");
 
-  document.querySelector("#inicio")?.addEventListener("click", () => {
-    mostrarTemplos(templos, "Todos os Templos");
-  });
+  const linkInicio = document.querySelector("#inicio");
+  if (linkInicio) {
+    linkInicio.addEventListener("click", (event) => {
+      event.preventDefault();
+      marcarLinkAtivo(linkInicio);
+      exibirTemplos(templos, "Todos os Templos");
+    });
+  }
 
-  document.querySelector("#antigos")?.addEventListener("click", () => {
-    mostrarTemplos(
-      templos.filter((t) => anoConsagracao(t.consagracao) < 1900),
-      "Templos Antigos"
-    );
-  });
+  const linkAntigos = document.querySelector("#antigos");
+  if (linkAntigos) {
+    linkAntigos.addEventListener("click", (event) => {
+      event.preventDefault();
+      marcarLinkAtivo(linkAntigos);
+      exibirTemplos(
+        templos.filter((t) => obterAnoConsagracao(t.consagracao) < 1900),
+        "Templos Antigos"
+      );
+    });
+  }
 
-  document.querySelector("#novos")?.addEventListener("click", () => {
-    mostrarTemplos(
-      templos.filter((t) => anoConsagracao(t.consagracao) > 2000),
-      "Templos Novos"
-    );
-  });
+  const linkNovos = document.querySelector("#novos");
+  if (linkNovos) {
+    linkNovos.addEventListener("click", (event) => {
+      event.preventDefault();
+      marcarLinkAtivo(linkNovos);
+      exibirTemplos(
+        templos.filter((t) => obterAnoConsagracao(t.consagracao) > 2000),
+        "Templos Novos"
+      );
+    });
+  }
 
-  document.querySelector("#grandes")?.addEventListener("click", () => {
-    mostrarTemplos(
-      templos.filter((t) => Number(t.area) > 90000),
-      "Templos Grandes"
-    );
-  });
+  const linkGrandes = document.querySelector("#grandes");
+  if (linkGrandes) {
+    linkGrandes.addEventListener("click", (event) => {
+      event.preventDefault();
+      marcarLinkAtivo(linkGrandes);
+      exibirTemplos(
+        templos.filter((t) => Number(t.area) > 90000),
+        "Templos Grandes"
+      );
+    });
+  }
 
-  document.querySelector("#pequenos")?.addEventListener("click", () => {
-    mostrarTemplos(
-      templos.filter((t) => Number(t.area) < 10000),
-      "Templos Pequenos"
-    );
-  });
+  const linkPequenos = document.querySelector("#pequenos");
+  if (linkPequenos) {
+    linkPequenos.addEventListener("click", (event) => {
+      event.preventDefault();
+      marcarLinkAtivo(linkPequenos);
+      exibirTemplos(
+        templos.filter((t) => Number(t.area) < 10000),
+        "Templos Pequenos"
+      );
+    });
+  }
 
-  const ano = document.querySelector("#ano-atual") || document.querySelector("#currentyear");
-  if (ano) ano.textContent = new Date().getFullYear();
+  const anoAtualEl = document.querySelector("#ano-atual");
+  if (anoAtualEl) {
+    anoAtualEl.textContent = new Date().getFullYear();
+  }
 
-  const mod = document.querySelector("#ultima-modificacao") || document.querySelector("#lastModified");
-  if (mod) mod.textContent = document.lastModified;
+  const ultimaModificacaoEl = document.querySelector("#ultima-modificacao");
+  if (ultimaModificacaoEl) {
+    ultimaModificacaoEl.textContent = document.lastModified;
+  }
 });

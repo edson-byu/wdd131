@@ -6,23 +6,23 @@
   <title>Álbum de Imagens de Templos | WDD 131</title>
   <meta name="description" content="Álbum dinâmico de templos com filtragem por época de consagração e área em pés quadrados, layout responsivo e carregamento lento de imagens.">
   <meta name="author" content="Edson Silva dos Passos">
- <link rel="stylesheet" href="estilos/templos-filtrados.css">
+  <link rel="stylesheet" href="estilos/templos-filtrados.css">
   <script src="scripts/templos-filtrados.js" defer></script>
 </head>
 <body>
   <header>
-    <p class="marca-topo">Álbum do Templo</p>
-    <h1>Álbum de Templos</h1>
+    <p>Álbum do Templo</p>
     <nav aria-label="Filtros de templos">
-      <button type="button" id="inicio" class="ativo">Página Inicial</button>
-      <button type="button" id="antigos">Antigo</button>
-      <button type="button" id="novos">Novo</button>
-      <button type="button" id="grandes">Grande</button>
-      <button type="button" id="pequenos">Pequeno</button>
+      <a href="#inicio" id="inicio">Página Inicial</a>
+      <a href="#antigos" id="antigos">Antigo</a>
+      <a href="#novos" id="novos">Novo</a>
+      <a href="#grandes" id="grandes">Grande</a>
+      <a href="#pequenos" id="pequenos">Pequeno</a>
     </nav>
   </header>
 
   <main>
+    <h1>Álbum de Templos</h1>
     <h2 id="titulo-filtro">Todos os Templos</h2>
     <div id="templos-container" class="templos-grid"></div>
   </main>
