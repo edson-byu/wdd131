@@ -1,184 +1,34 @@
-:root {
-    --cor-primaria: #1b365d;
-    --cor-secundaria: #264875;
-    --cor-destaque: #d4881e;
-    --cor-fundo: #f4f6f9;
-    --cor-card: #ffffff;
-    --cor-texto: #1f2937;
-    --cor-texto-claro: #ffffff;
-    --cor-borda: #d1d5db;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-}
-
-/* Cabeçalho e navegação */
-header {
-    background-color: var(--cor-primaria);
-    color: var(--cor-texto-claro);
-    border-bottom: 4px solid var(--cor-destaque);
-    padding: 1rem 1.5rem;
-}
-
-.header-top {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cor-texto-claro);
-}
-
-#menu-toggle {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-claro);
-    border: 1px solid #8aa6cc;
-    border-radius: 6px;
-    padding: 0.4rem 0.75rem;
-    font-size: 1.25rem;
-    cursor: pointer;
-}
-
-#menu-toggle:hover,
-#menu-toggle:focus-visible {
-    background-color: var(--cor-destaque);
-    color: #111827;
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0.75rem auto 0;
-}
-
-nav ul.nav-list {
+.nav-list {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
+    padding: 0;
+    margin: 0.75rem 0 0;
 }
 
-nav a.filter-link,
-nav a.filter-link:visited {
-    display: block;
-    padding: 0.55rem 1.05rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--cor-texto-claro);
-    background-color: var(--cor-secundaria);
-    border: 1px solid #8aa6cc;
+.filter-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-nav a.filter-link:hover,
-nav a.filter-link:focus-visible,
-nav a.filter-link.active {
-    background-color: var(--cor-destaque);
-    border-color: var(--cor-destaque);
+.filter-link:hover,
+.filter-link:focus-visible {
+    background-color: #d4881e;
+    border-color: #d4881e;
     color: #111827;
-    text-decoration: none;
 }
 
-/* Conteúdo principal e grade de templos */
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.25rem;
-}
-
-h1 {
-    font-size: 2rem;
-    color: var(--cor-primaria);
-    margin-bottom: 0.5rem;
-}
-
-#filtro-titulo {
-    font-size: 1.35rem;
-    color: var(--cor-secundaria);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.templos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.templo-card {
-    background-color: var(--cor-card);
-    border: 1px solid var(--cor-borda);
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.templo-card h3 {
-    font-size: 1.15rem;
-    color: var(--cor-primaria);
-}
-
-.templo-card p {
-    font-size: 0.95rem;
-}
-
-.templo-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-top: 0.5rem;
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--cor-primaria);
-    color: var(--cor-texto-claro);
-    border-top: 4px solid var(--cor-destaque);
-    text-align: center;
-    padding: 1.25rem;
-    margin-top: 3rem;
-    font-size: 0.95rem;
-}
-
-/* Layout responsivo para telas maiores */
-@media (min-width: 768px) {
-    #menu-toggle {
-        display: none;
-    }
-
-    nav ul.nav-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.65rem;
-    }
-
-    nav a.filter-link,
-    nav a.filter-link:visited {
-        display: inline-block;
-    }
-
-    .templos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.filter-link.active {
+    background-color: #d4881e;
+    border-color: #d4881e;
+    color: #111827;
 }
