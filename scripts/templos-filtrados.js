@@ -86,7 +86,7 @@ const templos = [
 
 const containerTemplos = document.querySelector("#templos-container");
 const tituloSecao = document.querySelector("#filtro-titulo");
-const botoesFiltro = document.querySelectorAll(".filter-btn");
+const linksFiltro = document.querySelectorAll(".filter-link");
 const botaoMenu = document.querySelector("#menu-toggle");
 const listaNavegacao = document.querySelector("#nav-menu");
 
@@ -124,7 +124,7 @@ function renderizarTemplos(lista) {
     });
 }
 
-// Filtra os templos de acordo com o botão clicado
+// Filtra os templos de acordo com o link clicado
 function filtrarTemplos(tipoFiltro) {
     let resultado = templos;
     let titulo = "Todos os Templos";
@@ -149,15 +149,16 @@ function filtrarTemplos(tipoFiltro) {
 
     renderizarTemplos(resultado);
 
-    botoesFiltro.forEach((botao) => {
-        botao.classList.toggle("active", botao.id === tipoFiltro);
+    linksFiltro.forEach((link) => {
+        link.classList.toggle("active", link.id === tipoFiltro);
     });
 }
 
-// Eventos dos botões de filtro
-botoesFiltro.forEach((botao) => {
-    botao.addEventListener("click", () => {
-        filtrarTemplos(botao.id);
+// Eventos de clique nos links de filtro
+linksFiltro.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        filtrarTemplos(link.id);
         if (listaNavegacao && listaNavegacao.classList.contains("open")) {
             listaNavegacao.classList.remove("open");
             if (botaoMenu) {

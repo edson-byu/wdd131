@@ -13,21 +13,22 @@
 <body>
     <header>
         <div class="header-top">
-            <h1>Álbum de Templos</h1>
+            <p class="header-title">Álbum do Templo</p>
             <button id="menu-toggle" type="button" aria-label="Abrir ou fechar menu de navegação" aria-expanded="false">&#9776;</button>
         </div>
         <nav aria-label="Filtros de templos">
             <ul id="nav-menu" class="nav-list">
-                <li><button type="button" id="home" class="filter-btn active">Início</button></li>
-                <li><button type="button" id="old" class="filter-btn">Antigos</button></li>
-                <li><button type="button" id="new" class="filter-btn">Novos</button></li>
-                <li><button type="button" id="large" class="filter-btn">Grandes</button></li>
-                <li><button type="button" id="small" class="filter-btn">Pequenos</button></li>
+                <li><a href="#home" id="home" class="filter-link active">Página Inicial</a></li>
+                <li><a href="#old" id="old" class="filter-link">Antigo</a></li>
+                <li><a href="#new" id="new" class="filter-link">Novo</a></li>
+                <li><a href="#large" id="large" class="filter-link">Grande</a></li>
+                <li><a href="#small" id="small" class="filter-link">Pequeno</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <h1>Álbum de Templos</h1>
         <h2 id="filtro-titulo">Todos os Templos</h2>
         <div id="templos-container" class="templos-grid" aria-live="polite"></div>
     </main>
