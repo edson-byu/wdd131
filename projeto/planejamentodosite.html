@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documento de planejamento do site para o projeto final da disciplina WDD 131, incluindo nome, finalidade, cenários, cores, tipografia e wireframes.">
+  <meta name="author" content="Edson Silva dos Passos">
+  <title>Documento de Planejamento do Site | WDD 131</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-primaria: #1e3a5f;
+      --cor-secundaria: #2b6cb0;
+      --cor-fundo: #f4f6f9;
+      --cor-superficie: #ffffff;
+      --cor-texto: #1f2937;
+      --cor-borda: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--cor-primaria);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
+      line-height: 1.3;
+    }
+
+    header h1 {
+      margin-bottom: 0.25rem;
+      font-size: 1.75rem;
+    }
+
+    header p {
+      margin: 0;
+      color: #e2e8f0;
+    }
+
+    main {
+      padding: 2rem 0;
+    }
+
+    section {
+      background-color: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+      color: var(--cor-primaria);
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--cor-secundaria);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .swatch {
+      border: 1px solid var(--cor-borda);
+      border-radius: 6px;
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cor-amostra {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      border: 1px solid var(--cor-borda);
+      flex-shrink: 0;
+    }
+
+    .wireframes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .wireframe-box {
+      border: 2px dashed var(--cor-secundaria);
+      border-radius: 6px;
+      padding: 1rem;
+      background-color: #f8fafc;
+    }
+
+    .wf-bloco {
+      background-color: #e2e8f0;
+      border: 1px solid #94a3b8;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .wf-desktop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background-color: var(--cor-primaria);
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 700px) {
+      .swatch-grid,
+      .wireframes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Documento de Planejamento do Site</h1>
+      <p>Projeto Final — WDD 131: Fundamentos da Web Dinâmica</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="nome-site">
+      <h2>1. Nome do Site</h2>
+      <p><strong>Guia Prático de Compras e Licitações Públicas</strong></p>
+      <p>Esse nome foi escolhido porque sintetiza o objetivo do projeto: oferecer um guia claro, organizado e acessível sobre modalidades, etapas, checklists e boas práticas de compras públicas e licitações.</p>
+    </section>
+
+    <section id="finalidade">
+      <h2>2. Finalidade do Site</h2>
+      <p>O site servirá como um portal informativo e interativo com pelo menos três páginas interligadas, apresentando conteúdos estruturados sobre processos licitatórios, uma página dinâmica com filtros e lista salva no <code>localStorage</code> para acompanhar itens/etapas de interesse, um formulário de consulta/contato e uma página de referências vinculada no rodapé.</p>
+    </section>
+
+    <section id="cenarios">
+      <h2>3. Cenários do Público-Alvo</h2>
+      <ul>
+        <li><strong>Cenário 1:</strong> Como um iniciante ou analista pode consultar rapidamente as principais etapas e exigências de um processo licitatório e salvar seus itens de verificação para consultar depois?</li>
+        <li><strong>Cenário 2:</strong> Onde o visitante encontra orientações práticas para preencher uma solicitação ou dúvida de acompanhamento e acessar as fontes de referência citadas no projeto?</li>
+      </ul>
+    </section>
+
+    <section id="cores">
+      <h2>4. Esquema de Cores</h2>
+      <p>O esquema de cores combina tons sóbrios e de alto contraste para facilitar a leitura e transmitir credibilidade:</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <span class="cor-amostra" style="background-color: #1e3a5f;"></span>
+          <div>
+            <strong>Azul-Marinho (#1e3a5f):</strong> cabeçalho, rodapé e títulos principais das seções.
+          </div>
+        </div>
+        <div class="swatch">
+          <span class="cor-amostra" style="background-color: #2b6cb0;"></span>
+          <div>
+            <strong>Azul-Real (#2b6cb0):</strong> linhas de destaque, bordas de wireframes e elementos de foco/interação.
+          </div>
+        </div>
+        <div class="swatch">
+          <span class="cor-amostra" style="background-color: #f4f6f9;"></span>
+          <div>
+            <strong>Cinza-Claro (#f4f6f9):</strong> plano de fundo geral da página.
+          </div>
+        </div>
+        <div class="swatch">
+          <span class="cor-amostra" style="background-color: #ffffff;"></span>
+          <div>
+            <strong>Branco (#ffffff) e Cinza-Escuro (#1f2937):</strong> superfície dos cartões de conteúdo e texto principal, garantindo contraste legível.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tipografia">
+      <h2>5. Tipografia</h2>
+      <ul>
+        <li><strong>Montserrat (sans-serif):</strong> aplicada nos títulos (<code>h1</code>, <code>h2</code>, <code>h3</code>) para dar hierarquia visual e clareza na leitura dos tópicos.</li>
+        <li><strong>Roboto (sans-serif):</strong> aplicada no corpo do texto, listas e descrições para manter boa legibilidade em telas pequenas e grandes.</li>
+      </ul>
+    </section>
+
+    <section id="wireframes">
+      <h2>6. Wireframes da Página Inicial</h2>
+      <p>Esboços estruturais da página inicial para visualização em dispositivos móveis e em telas maiores (desktop):</p>
+      <div class="wireframes">
+        <div class="wireframe-box">
+          <h3>Visualização Mobile</h3>
+          <div class="wf-bloco">Cabeçalho + Menu Hambúrguer</div>
+          <div class="wf-bloco">Destaque / Resumo do Site</div>
+          <div class="wf-bloco">Card 1 (Coluna Única)</div>
+          <div class="wf-bloco">Card 2 (Coluna Única)</div>
+          <div class="wf-bloco">Rodapé + Link de Referências</div>
+        </div>
+
+        <div class="wireframe-box">
+          <h3>Visualização Desktop (Tela Ampla)</h3>
+          <div class="wf-bloco">Cabeçalho + Navegação Horizontal</div>
+          <div class="wf-bloco">Banner Principal / Introdução</div>
+          <div class="wf-desktop-grid">
+            <div class="wf-bloco">Coluna / Card Esquerdo</div>
+            <div class="wf-bloco">Coluna / Card Direito</div>
+          </div>
+          <div class="wf-bloco">Rodapé + Link de Referências</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Planejamento do Projeto — WDD 131 | Edson Silva dos Passos</p>
+  </footer>
+</body>
+</html>
