@@ -1,0 +1,202 @@
+:root {
+  --cor-primaria: #132a4a;
+  --cor-destaque: #1d4ed8;
+  --cor-fundo: #f1f5f9;
+  --cor-card: #ffffff;
+  --cor-texto: #0f172a;
+  --cor-texto-suave: #475569;
+  --cor-borda: #94a3b8;
+  --cor-obrigatorio: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, legend {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.site-header {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 1.5rem 0;
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.site-header p {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+.aviso-obrigatorio {
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+}
+
+.obrigatorio {
+  color: var(--cor-obrigatorio);
+  font-weight: 700;
+}
+
+.opcional {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.card-form,
+.card-confirmacao {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.campo {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.35rem;
+}
+
+.campo > label,
+.campo > legend {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+  color: var(--cor-texto);
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background-color: #ffffff;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 1px;
+  border-color: var(--cor-destaque);
+}
+
+.estrelas-grupo,
+.checkbox-grupo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.estrela-item,
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #f8fafc;
+}
+
+.estrela-item label,
+.checkbox-item label {
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+}
+
+.acoes-form {
+  margin-top: 1.5rem;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+}
+
+.contador-box {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--cor-destaque);
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+}
+
+.voltar-link a {
+  color: var(--cor-destaque);
+  font-weight: 600;
+}
+
+.site-footer {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 1.25rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 640px) {
+  .estrelas-grupo {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .checkbox-grupo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-enviar {
+    width: auto;
+    min-width: 220px;
+  }
+}

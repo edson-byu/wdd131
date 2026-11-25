@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de avaliação de produto com classificação por estrelas, data de instalação, recursos úteis e confirmação dinâmica.">
+  <meta name="author" content="Edson Silva dos Passos">
+  <title>Formulário de Avaliação de Produto | WDD 131</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/formulario.css">
+  <script src="scripts/formulario.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Avaliação de Produto</h1>
+      <p>Compartilhe sua experiência com o produto utilizado</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="aviso-obrigatorio">Campos marcados com <span class="obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+
+    <form id="form-avaliacao" method="get" action="avaliacao.html" class="card-form">
+      <div class="campo">
+        <label for="nome-produto">Nome do Produto <span class="obrigatorio" aria-label="obrigatório">*</span></label>
+        <select id="nome-produto" name="nomeProduto" required>
+          <option value="" disabled selected>Selecione um Produto...</option>
+        </select>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Classificação Geral <span class="obrigatorio" aria-label="obrigatório">*</span></legend>
+        <div class="estrelas-grupo">
+          <div class="estrela-item">
+            <input type="radio" id="estrela-1" name="classificacaoGeral" value="1" required>
+            <label for="estrela-1">&star; <span>1</span></label>
+          </div>
+          <div class="estrela-item">
+            <input type="radio" id="estrela-2" name="classificacaoGeral" value="2" required>
+            <label for="estrela-2">&star;&star; <span>2</span></label>
+          </div>
+          <div class="estrela-item">
+            <input type="radio" id="estrela-3" name="classificacaoGeral" value="3" required>
+            <label for="estrela-3">&star;&star;&star; <span>3</span></label>
+          </div>
+          <div class="estrela-item">
+            <input type="radio" id="estrela-4" name="classificacaoGeral" value="4" required>
+            <label for="estrela-4">&star;&star;&star;&star; <span>4</span></label>
+          </div>
+          <div class="estrela-item">
+            <input type="radio" id="estrela-5" name="classificacaoGeral" value="5" required>
+            <label for="estrela-5">&star;&star;&star;&star;&star; <span>5</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <label for="data-instalacao">Data de Instalação <span class="obrigatorio" aria-label="obrigatório">*</span></label>
+        <input type="date" id="data-instalacao" name="dataInstalacao" required>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Recursos Úteis <span class="opcional">(marque todos os aplicáveis)</span></legend>
+        <div class="checkbox-grupo">
+          <div class="checkbox-item">
+            <input type="checkbox" id="recurso-durabilidade" name="recursosUteis" value="durabilidade">
+            <label for="recurso-durabilidade">Durabilidade</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="recurso-facilidade" name="recursosUteis" value="facilidade-de-uso">
+            <label for="recurso-facilidade">Facilidade de Uso</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="recurso-desempenho" name="recursosUteis" value="desempenho">
+            <label for="recurso-desempenho">Desempenho</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="recurso-design" name="recursosUteis" value="design">
+            <label for="recurso-design">Design</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <label for="avaliacao-escrita">Avaliação Escrita <span class="opcional">(opcional)</span></label>
+        <textarea id="avaliacao-escrita" name="avaliacaoEscrita" rows="4" placeholder="Escreva seus comentários sobre o produto..."></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="nome-usuario">Seu Nome <span class="opcional">(opcional)</span></label>
+        <input type="text" id="nome-usuario" name="nomeUsuario" placeholder="Digite seu nome">
+      </div>
+
+      <div class="acoes-form">
+        <input type="submit" value="Enviar Avaliação" class="btn-enviar">
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano-atual">2026</span> | Edson Silva dos Passos | Porto Alegre, RS</p>
+      <p id="ultima-modificacao"></p>
+    </div>
+  </footer>
+</body>
+</html>

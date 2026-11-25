@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Confirmação de envio da avaliação de produto e contador de avaliações concluídas.">
+  <meta name="author" content="Edson Silva dos Passos">
+  <title>Avaliação Enviada | WDD 131</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/formulario.css">
+  <script src="scripts/formulario.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Avaliação de Produto</h1>
+      <p>Confirmação de envio</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card-confirmacao" aria-labelledby="titulo-confirmacao">
+      <h2 id="titulo-confirmacao">Obrigado pela sua avaliação!</h2>
+      <p>Sua avaliação foi registrada com sucesso.</p>
+      <p class="contador-box">
+        Total de avaliações concluídas neste navegador:
+        <strong id="contador-avaliacoes">0</strong>
+      </p>
+      <p class="voltar-link">
+        <a href="formulario.html">Enviar outra avaliação</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano-atual">2026</span> | Edson Silva dos Passos | Porto Alegre, RS</p>
+      <p id="ultima-modificacao"></p>
+    </div>
+  </footer>
+</body>
+</html>
